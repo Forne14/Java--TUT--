@@ -1,0 +1,61 @@
+//random library
+import java.util.Random;
+
+public class Game {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int secretNumberEasy = random.nextInt(10);
+		int secretNumberMed = random.nextInt(20);
+		int secretNumberHard = random.nextInt(30);
+		Player player1 = new Player();
+		
+		//selects difficulty
+		int difficulty;
+		difficulty = 2; 
+		System.out.println("choose a difficulty. 1 for easy, 2 for medium and 3 for hard.");
+		switch(difficulty){
+		case 1: 
+			System.out.println("you have chosen easy, make a guess between 1 and 10");
+			player1.skill = "easy";
+			skillLevel(player1.skill);
+			int playerGuess = player1.makeGuess();
+			if(playerGuess == secretNumberEasy){
+				System.out.println("Well done");
+				}
+			else
+			{
+				System.out.println("You lose.");
+			}
+			break;
+		
+		case 2: 
+			System.out.println("You have chosen medium, make a guess between 1 and 20");
+			player1.skill = "medium";
+			skillLevel(player1.skill);
+			int playerGuess = player1.makeGuess();
+			if(playerGuess == secretNumberMed){
+				System.out.println("Well done");
+				}
+			else
+			{
+				System.out.println("You lose.");
+			}
+			break;
+		
+		case 3:
+			System.out.println("You have chosen hard, make a guess between 1 and 30");
+			player1.skill = "hard";
+			skillLevel(player1.skill);
+			int playerGuess = player1.makeGuess();
+			if(playerGuess == secretNumberHard){
+				System.out.println("Well done");
+				}
+			else
+			{
+				System.out.println("You lose.");
+			}
+		break;
+		}
+	}
+}
